@@ -14,7 +14,7 @@
 
 The code has been tested with the following environment:
 
-- **Python**: 3.18.6
+- **Python**: 3.8.16
 - **g++**: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
 - **PyTorch**: 1.8.1+cu111
 
