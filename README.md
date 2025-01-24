@@ -4,13 +4,13 @@
 
 ![](https://raw.githubusercontent.com/iballester/spike/main/img/spike.png)
 
-## Abstract
+## 📄 Abstract
 
 3D Human Pose Estimation (HPE) is the task of locating key points of the human body in 3D space from 2D or 3D representations such as RGB images, depth maps, or point clouds. Current HPE methods from depth and point clouds predominantly rely on single-frame estimation and do not exploit temporal information from sequences. This paper presents **SPiKE**, a novel approach to 3D HPE using point cloud sequences. Unlike existing methods that process frames of a sequence independently, SPiKE leverages temporal context by adopting a Transformer architecture to encode spatio-temporal relationships between points across the sequence. By partitioning the point cloud into local volumes and using spatial feature extraction via point spatial convolution, SPiKE ensures efficient processing by the Transformer while preserving spatial integrity per timestamp. Experiments on the ITOP benchmark for 3D HPE show that SPiKE reaches **89.19% mAP**, achieving state-of-the-art performance with significantly lower inference times. Extensive ablations further validate the effectiveness of sequence exploitation and our algorithmic choices.
 
 ---
 
-## Prerequisites
+## ⚙️ Prerequisites
 
 The code has been tested with the following environment:
 
@@ -18,11 +18,9 @@ The code has been tested with the following environment:
 - **g++**: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
 - **PyTorch**: 1.8.1+cu111
 
-Ensure these tools are available in your environment before proceeding.
-
 ---
 
-## Installation
+## 🛠️ Installation
 
 1. Clone the repository:
    ```bash
@@ -43,9 +41,9 @@ Ensure these tools are available in your environment before proceeding.
 
 ---
 
-## Instructions for ITOP Dataset
+## 📝 How to run SPiKE for ITOP
 
-1. Download the dataset ITOP SIDE (point clouds and labels) from [ITOP Dataset | Zenodo](https://zenodo.org/record/3932973#.Yp8SIxpBxPA) and unzip the contents.
+1. Download the ITOP SIDE dataset (point clouds and labels) from [ITOP Dataset | Zenodo](https://zenodo.org/record/3932973#.Yp8SIxpBxPA) and unzip its contents.
 
 2. Isolate points corresponding to the human body in the point clouds and save the results as `.npz` files. 
 - You can use the provided script `utils/preprocess_itop.py` as an example. This script takes the original `.h5` files, removes the background by clustering and depth thresholding (see the paper for more details) and saves the results as point cloud sequences in `.npz` format. To run this script, make sure you have the open3d library installed.
@@ -62,7 +60,7 @@ Ensure these tools are available in your environment before proceeding.
 
 ---
 
-## Usage
+## 🚀 Usage
 
 ### Training
 
@@ -80,9 +78,11 @@ For predictions, update the path pointing to the model weights, check that the c
 python predict_itop.py --config experiments/ITOP-SIDE/1/config.yaml --model experiments/ITOP-SIDE/1/log/model.pth
 ```
 
+You can download our model weights here: [Download Model Weights.](https://cloud.cvl.tuwien.ac.at/s/ATCBp34rH3fGJ23)
+
 ---
 
-## Qualitative Results
+## 🎥 Qualitative Results
 
 For video samples showcasing pose predictions on the testing set, please visit:
 
@@ -95,9 +95,9 @@ For video samples showcasing pose predictions on the testing set, please visit:
 
 ---
 
-## Citation
+## 📚 Citation
 
-If you find our work useful, please cite us:
+If you find our work useful, we'd really appreciate it if you cite us:
 
 ```bibtex
 @inproceedings{ballester2024spike,
@@ -110,7 +110,7 @@ If you find our work useful, please cite us:
 
 ---
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 A big thanks to the following open-source projects for their contributions:
 
@@ -121,6 +121,6 @@ Their work greatly facilitated the development of this project.
 
 ---
 
-## License
+## 📜 License
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
