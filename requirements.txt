@@ -6,3 +6,6 @@ setuptools==68.0.0
 tqdm==4.65.0
 torch==2.1.0+cu121
 wandb
+catkin-pkg
+lark
+empy
