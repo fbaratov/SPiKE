@@ -2,7 +2,7 @@
 Module for creating models based on configuration.
 """
 
-from model import spike
+from . import spike
 
 def create_model(config, num_coord_joints):
     """Create a model based on the config and return it."""
